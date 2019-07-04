@@ -76,7 +76,7 @@ oncoplot = function(maf, top = 20, genes = NULL, mutsig = NULL, mutsigQval = 0.1
                      showTumorSampleBarcodes = FALSE, barcode_mar = 4, gene_mar = 5, removeNonMutated = TRUE, fill = TRUE, cohortSize = NULL, colors = NULL,
                      sortByMutation = FALSE, sortByAnnotation = FALSE, numericAnnoCol = NULL, groupAnnotationBySize = TRUE, annotationOrder = NULL, keepGeneOrder = FALSE,
                      GeneOrderSort = TRUE, sampleOrder = NULL, writeMatrix = FALSE, sepwd_genes = 0.5, sepwd_samples = 0.25, fontSize = 0.8, SampleNamefontSize = 1,
-                     showTitle = TRUE, titleFontSize = 1.5, legendFontSize = 1.2, annotationFontSize = 1.2, bgCol = "#CCCCCC", borderCol = 'white', colbar_pathway = FALSE){
+                     showTitle = TRUE, titleFontSize = 1.5, legendFontSize = 1.2, annotationFontSize = 1.2, bgCol = "whitesmoke", borderCol = 'white', colbar_pathway = FALSE){
 
   if(!is.null(genes)){ #If user provides a gene list
     om = createOncoMatrix(m = maf, g = genes, add_missing = fill)
