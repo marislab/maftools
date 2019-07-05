@@ -286,7 +286,8 @@ oncoplot = function(maf, top = 20, genes = NULL, mutsig = NULL, mutsigQval = 0.1
       top_bar_data[is.infinite(top_bar_data)] = 0
     }
 
-    plot(x = NA, y = NA, type = "n", xlim = c(0,ncol(top_bar_data)), ylim = c(0, max(colSums(x = top_bar_data, na.rm = TRUE))),
+    plot(x = NA, y = NA, type = "n", xlim = c(0,ncol(top_bar_data)),
+         ylim = ifelse((logColBar), c(0, 3), c(0, max(colSums(x = top_bar_data, na.rm = TRUE)))),
          axes = FALSE, frame.plot = FALSE, xlab = NA, ylab = NA, xaxs = "i")
     axis(side = 2, at = c(0, round(max(colSums(top_bar_data, na.rm = TRUE)))), las = 2, line = 0.5)
     for(i in 1:ncol(top_bar_data)){
