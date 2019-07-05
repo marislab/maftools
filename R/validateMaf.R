@@ -61,8 +61,8 @@ validateMaf = function(maf, rdup = TRUE, isTCGA = isTCGA, chatty = TRUE){
   #Variant Classification with High/Moderate variant consequences. http://asia.ensembl.org/Help/Glossary?id=535
   vc.nonSilent = c("Frame_Shift_Del", "Frame_Shift_Ins", "Splice_Site", "Translation_Start_Site",
                    "Nonsense_Mutation", "Nonstop_Mutation", "In_Frame_Del",
-                   "In_Frame_Ins", "Missense_Mutation")
-  vt = c('SNP', 'DNP', 'TNP', 'ONP', 'INS', 'DEL')
+                   "In_Frame_Ins", "Missense_Mutation", "Fusion")
+  vt = c('SNP', 'DNP', 'TNP', 'ONP', 'INS', 'DEL', 'OTHER')
 
   maf.vcs = unique(as.character(maf[,Variant_Classification]))
   maf.vts = unique(as.character(maf[,Variant_Type]))

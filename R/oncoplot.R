@@ -403,7 +403,7 @@ oncoplot = function(maf, top = 20, genes = NULL, mutsig = NULL, mutsigQval = 0.1
   #Add CNVs if any
   mat_origin = mat_origin[rownames(numMat), colnames(numMat), drop = FALSE]
   if(writeMatrix){
-    write.table(mat_origin, "onco_matrix.txt", sep = "\t", quote = FALSE)
+    write.table(mat_origin, paste0(prefix_name, "-onco_matrix.txt"), sep = "\t", quote = FALSE)
   }
   mo = t(apply(mat_origin, 2, rev))
 
