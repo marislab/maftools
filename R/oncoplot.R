@@ -227,11 +227,11 @@ oncoplot = function(maf, top = 20, genes = NULL, mutsig = NULL, mutsigQval = 0.1
     top_bar_data = t(samp_sum[colnames(numMat),,])
   }
 
- # if(is.null(colors)){
-  #  vc_col = get_vcColors()
-  #}else{
+  if(is.null(colors)){
+    vc_col = get_vcColors()
+  }else{
     vc_col = colors
- # }
+  }
   vc_codes = om$vc #VC codes
 
   if(nrow(numMat) == 1){
