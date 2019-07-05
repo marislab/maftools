@@ -350,7 +350,7 @@ oncoplot = function(maf, top = 20, genes = NULL, mutsig = NULL, mutsigQval = 0.1
     for(i in 1:nrow(exprsTbl)){
       x = rev(exprsTbl$exprn)[i]
       rect(ybottom = i-1, xleft = -x, ytop = i-0.1,
-           xright = 0, col = "gray70", border = NA, lwd = 0)
+           xright = 0, col = "#F2F2F2", border = NA, lwd = 0)
     }
     axis(side = 3, at = rev(-exprs_bar_lims), outer = FALSE, line = 0.25, labels = rev(exprs_bar_lims))
   }
@@ -534,7 +534,7 @@ oncoplot = function(maf, top = 20, genes = NULL, mutsig = NULL, mutsigQval = 0.1
       for(i in 1:nrow(ms.smg)){
         x = rev(ms.smg$FDR)[i]
         rect(ybottom = i-1, xleft = 0, ytop = i-0.1,
-             xright = x, col = "gray70", border = NA, lwd = 0)
+             xright = x, col = "#F2F2F2", border = NA, lwd = 0)
       }
       axis(side = 3, at = side_bar_lims, outer = FALSE, line = 0.25)
     }
@@ -551,7 +551,7 @@ oncoplot = function(maf, top = 20, genes = NULL, mutsig = NULL, mutsigQval = 0.1
 
     annotationColor = lapply(annotationColor, function(x) {
       na_idx = which(is.na(names(x)))
-      x[na_idx] = "gray70"
+      x[na_idx] = "#F2F2F2"
       names(x)[na_idx] = "NA"
       x
     })
@@ -598,7 +598,7 @@ oncoplot = function(maf, top = 20, genes = NULL, mutsig = NULL, mutsigQval = 0.1
       temp_anno = as.matrix(annotation)
       #Handle NA's
       if(is.na(col)){
-        col = "gray70"
+        col = "#F2F2F2"
         temp_anno[is.na(temp_anno)] = as.numeric(names(anno_code))
       }
       temp_anno[temp_anno != names(anno_code)] = NA
@@ -657,7 +657,7 @@ oncoplot = function(maf, top = 20, genes = NULL, mutsig = NULL, mutsigQval = 0.1
              ytop = cumsum(x), col = titv_col[names(x)], border = NA, lwd = 0)
       }else{
         rect(xleft = i-1, ybottom = c(0, 100), xright = i-0.1,
-             ytop = 100, col = "gray70", border = NA, lwd = 0)
+             ytop = 100, col = "#F2F2F2", border = NA, lwd = 0)
       }
     }
 
@@ -684,7 +684,7 @@ oncoplot = function(maf, top = 20, genes = NULL, mutsig = NULL, mutsigQval = 0.1
   leg_classes = vc_col[vc_codes[2:length(vc_codes)]]
   leg_classes_pch = rep(15, length(leg_classes))
   if(additionalFeature_legend){
-    leg_classes = c(leg_classes,"gray70")
+    leg_classes = c(leg_classes,"#F2F2F2")
     names(leg_classes)[length(leg_classes)] = paste(additionalFeature, collapse = ":")
     leg_classes_pch = c(leg_classes_pch, additionalFeaturePch)
   }
